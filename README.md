@@ -2,6 +2,8 @@
 
 由乐之用 AI 辅助改编的互动艺术家主页：让梵高从画面里走出来，用一份会动的 3D 简历介绍他的艺术人生。
 
+**在线体验：[打开梵高的 3D 简历](https://caolezhi.github.io/van-gogh-3d-resume/)**
+
 ![梵高主题封面](web/public/van-gogh-og.png)
 
 ## 体验亮点
@@ -65,6 +67,6 @@ React · TypeScript · Vite · Three.js · React Three Fiber · Drei · Framer M
 
 ## 发布说明
 
-GitHub 仓库保存的是源码，上传仓库不等于网站已经上线。运行 `npm run build` 后可将 `web/dist/` 交给静态网站托管服务；仓库内的构建检查也会生成可下载的网站文件。
+网站通过 GitHub Pages 发布，`main` 分支更新后自动构建并部署。工作流为 `.github/workflows/pages.yml`，也可在 Actions 页面手动运行。部署状态以工作流结果为准。
 
-正式部署后，请把 `web/index.html` 中的社交封面图片地址改为实际网站的完整 HTTPS 地址。
+复制本仓库到其他账号时，在 Settings → Pages 中选择 GitHub Actions，并把 `web/index.html` 中的社交封面与页面地址改为自己的网站地址。

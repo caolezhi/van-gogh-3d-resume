@@ -125,7 +125,11 @@ function WorkDetail({
   const [bannerError, setBannerError] = useState(false)
   const doc = getWorkDoc(item.slug)
   const title = (doc && doc.title) || item.name
-  const banner = doc && doc.banner
+  const banner = doc?.banner
+    ? doc.banner.startsWith('/') && !doc.banner.startsWith('//')
+      ? `${import.meta.env.BASE_URL}${doc.banner.slice(1)}`
+      : doc.banner
+    : undefined
   // 有 md 详情时展示完整信息；无 md 时详情页只保留标题 + 统一占位文案
   const link = doc ? doc.link || item.link : null
   const tags = doc ? doc.tags || item.tags : null
